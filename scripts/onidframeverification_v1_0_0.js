@@ -25,7 +25,7 @@ function StartOnId(params){
     PASSWORD = params.Password;
     CLASS = params.FrameCssClass;
     RESULT_CLASS = params.ResultCssClass;
-    COMPONENT = `${BASE_URL}/auth?authmech=OnID+Password&do=login&username=${USER}&password=${PASSWORD}&cbval_vendorBase64=AAAk%2FwMGAAAAAQ%3D%3D&Submit1=Yes&&location=https%3a%2f%2fwebcomponentpsv.onid.us%2f`;
+    COMPONENT = 'https://reactwebrgdocntface.azurewebsites.net/'
     STEPS_PAGE = `${BASE_URL}/onid-verification/Steps.html?backUrl=${window.location.href}&&name=${NAME}&&imageUrl=${LOGO_URL}`;
     loadIframe();
 
