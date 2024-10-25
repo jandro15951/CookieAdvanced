@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONID Verification</title>
+</head>
+<body>
+    <div class="container">
+        <div id="frame-id"></div>
+    
+        <div class="onid-container" id="result-id">
+            <p style="padding-top: 10px; padding-left: 30px;">Response:</p>
+       </div>
+    </div>
+    
+   <script src="https://portal.onid.us/wa/onid-verification/scripts/onidframeverification_v1_0_0.js" ></script>
+   
+    <script>
+    var params = {
+        FrameContainer : "frame-id",
+        ResultContainer : "result-id",
+        EntityName : "MasterCard",
+        EntityLogo : "https://portal.onid.us/wa/onid-verification/assets/onid_logo.png",
+        User : "fabricio",
+        Password : "v%5CwqV7p%26xL%2Ct%3EyIe5gOM",
+        FrameCssClass : "FrameStyle",
+        ResultCssClass : "ResultStyle"
+    }
+
+    
+    StartOnId(params);
+
+    function GetResultONID(object){
+        // Do something with object
+        console.log(object);
+    }
+    </script>
+    <style>
+         body {
+            color: #000;
+            background-color: #0072C6;
+            margin: 0;
+        }
+        .FrameStyle{
+            width: 100%;
+            height: 500px;
+            overflow: auto;
+            max-width: 800px;
+        
+            border: none;
+        }
+        .container{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .onid-container{
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        
+        }
+        .ResultStyle{
+            margin-left: auto; margin-right: auto; width: 800px; height: 500px; text-align: left; background-color: white; word-wrap: break-word;
+        }
+    </style>
+</body>
+</html>

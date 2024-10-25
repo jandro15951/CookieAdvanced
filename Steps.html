@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps</title>
+    <link href="styles/style.css" rel="stylesheet"  />
+    <link  href="styles/Steps.css" rel="stylesheet" />
+    <link href="styles/fontawesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="flex-center flex-column">
+        <div class="title">
+            <h1 class="title-center color-light-blue" id="TitleName"></h1>
+            <img id="imgLogo" />
+            <p id="subtitle"></p>
+
+        </div>
+        <div class="step-group">
+            <div class="img-group">
+                <img src="assets/tarjeta_correcta.svg" />
+                <i class="fa fa-check-circle"></i>
+                <img src="assets/Tarjeta_destello.svg" />
+                <i class="fa fa-times-circle" ></i>
+            </div>
+          
+            <p id="step_1"></p>
+        </div>
+        <div class="line"></div>
+        <div class="step-group">
+            <div class="img-group">
+                <img src="assets/tarjeta_centrada.svg" />
+                <i class="fa fa-check-circle"></i>
+                <img src="assets/tarjeta_movida.svg" />
+                <i class="fa fa-times-circle" ></i>
+            </div>
+          
+            <p id="step_2"></p>
+        </div>
+
+        <div class="line"></div>
+        <div class="step-group">
+            <div class="img-group">
+                <img src="assets/tarjeta_correcta.svg" />
+                <i class="fa fa-check-circle"></i>
+                <img src="assets/traj_desenforque.svg" />
+                <i class="fa fa-times-circle" ></i>
+            </div>
+           
+         
+            <p id="step_3"></p>
+        </div>
+       
+
+        <button class="btn-info" id="btnAceptar" onclick="RedirectTo()"></button>
+    </div>
+
+    
+<script src="scripts/Language.js"></script>
+<script src="scripts/Steps.js"></script>
+</body>
+</html>

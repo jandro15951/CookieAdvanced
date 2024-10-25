@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84.39" height="52.5" viewBox="0 0 84.39 52.5">
+  <g id="Grupo_345" data-name="Grupo 345" transform="translate(-4625 -5166)">
+    <g id="Grupo_342" data-name="Grupo 342" transform="translate(4625 5166)">
+      <rect id="Rectángulo_175" data-name="Rectángulo 175" width="82.39" height="50.5" rx="5.28" transform="translate(1 1)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke-dasharray="11.67 11.67"/>
+      <g id="Grupo_339" data-name="Grupo 339">
+        <line id="Línea_128" data-name="Línea 128" x2="6" transform="translate(7.27 8.97)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Línea_129" data-name="Línea 129" x2="6" transform="translate(30.5 8.97)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      </g>
+      <g id="Grupo_340" data-name="Grupo 340">
+        <line id="Línea_130" data-name="Línea 130" x2="6" transform="translate(6.09 39.1)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Línea_131" data-name="Línea 131" x2="42.14" transform="translate(24.14 39.1)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke-dasharray="12.04 12.04"/>
+        <line id="Línea_132" data-name="Línea 132" x2="6" transform="translate(72.3 39.1)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      </g>
+      <g id="Grupo_341" data-name="Grupo 341">
+        <line id="Línea_133" data-name="Línea 133" x2="6" transform="translate(6.09 45.59)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+        <line id="Línea_134" data-name="Línea 134" x2="42.14" transform="translate(24.14 45.59)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke-dasharray="12.04 12.04"/>
+        <line id="Línea_135" data-name="Línea 135" x2="6" transform="translate(72.3 45.59)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"/>
+      </g>
+    </g>
+    <g id="Grupo_344" data-name="Grupo 344" transform="translate(4625 5166)">
+      <g id="Grupo_343" data-name="Grupo 343">
+        <rect id="Rectángulo_176" data-name="Rectángulo 176" width="27.17" height="27.17" rx="1.71" transform="translate(50.48 4.99)" fill="#404040"/>
+        <rect id="Rectángulo_177" data-name="Rectángulo 177" width="27.17" height="27.17" rx="1.71" transform="translate(50.48 4.99)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" stroke-dasharray="13.22 13.22"/>
+      </g>
+      <rect id="Rectángulo_178" data-name="Rectángulo 178" width="82.39" height="50.5" rx="5.28" transform="translate(1 1)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Línea_136" data-name="Línea 136" x2="29.23" transform="translate(7.27 8.97)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Línea_137" data-name="Línea 137" x2="72.21" transform="translate(6.09 39.1)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+      <line id="Línea_138" data-name="Línea 138" x2="72.21" transform="translate(6.09 45.59)" fill="none" stroke="#404040" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
