@@ -3,7 +3,7 @@ const BACK_URL ="backUrl";
 const REDIRECT = GetParam(BACK_URL);
 const NAME = "name";
 const LOGO = "imageUrl";
-var COOKIE = null;
+let COOKIE = null;
 Start();
 function Start(){
 SetValues();
@@ -27,7 +27,7 @@ function DeleteParams() {
 function SetValues(){
 
 
-    var url = GetParam(BACK_URL) ?? null;
+    const url = GetParam(BACK_URL) ?? null;
 
     if(url != null){
         SetCookie();
@@ -44,12 +44,12 @@ function SetValues(){
     }
     
 
-    var values = GetText();
+    const values = GetText();
 
-    var contador = 1;
+    let contador = 1;
     values.Steps.forEach(data => {
 
-        var element = document.getElementById("step_"+contador);
+        const element = document.getElementById("step_"+contador);
  
         element.innerHTML = data;
         contador = contador + 1;
@@ -87,17 +87,18 @@ function getCookieObject(cookieName) {
     const name = cookieName + "=";
     const decodedCookie = decodeURIComponent(document.cookie);
     const cookieArray = decodedCookie.split(';');
-    
-    for (let i = 0; i < cookieArray.length; i++) {
-        let cookie = cookieArray[i].trim();
-        if (cookie.indexOf(name) === 0) {
-            const jsonString = cookie.substring(name.length, cookie.length);
+
+    for (const cookie of cookieArray) {
+        const trimmedCookie = cookie.trim();
+        if (trimmedCookie.startsWith(name)) {
+            const jsonString = trimmedCookie.substring(name.length);
             return JSON.parse(jsonString); // Parse the JSON string back into an object
         }
     }
-    
+
     return null; // Return null if the cookie is not found
 }
+
 
 function RedirectTo(){
     window.location.href = `${COOKIE.backUrl}?step=1`;

@@ -1,20 +1,22 @@
 const OK = "ok";
-var SCRIPT_ID = "OnIdScript"
-var FRAME_CONTAINER_ID = "";
-var RESULT_CONTAINER_ID = "";
-var NAME = "";
-var LOGO_URL = "";
+const SCRIPT_ID = "OnIdScript"
+let FRAME_CONTAINER_ID = "";
+let RESULT_CONTAINER_ID = "";
+let NAME = "";
+let LOGO_URL = "";
 const VALIDATE_STEP = "redirect_to_steps";
+const PARENT = `&parentOrigin=${window.location.href}`;
 const STEP_PARAM_NAME = "step";
 const STEP = GetStep();
-var USER = "";
-const BASE_URL = "https://portal.onid.us/wa"
-var PASSWORD = "";
-const WELCOME_PAGE = `${BASE_URL}/onid-verification/WelcomePage.html?${STEP_PARAM_NAME}=${STEP}`;
-var COMPONENT = "";
-var STEPS_PAGE = "";
-var CLASS = "";
-var RESULT_CLASS = "";
+let USER = "";
+const EXPECTED_ORIGIN = "https://portal.onid.us";
+const BASE_URL = `${EXPECTED_ORIGIN}/wa`;
+let PASSWORD = "";
+const WELCOME_PAGE = `${BASE_URL}/onid-verification/WelcomePage.html?${STEP_PARAM_NAME}=${STEP}${PARENT}`;
+let COMPONENT = "";
+let STEPS_PAGE = "";
+let CLASS = "";
+let RESULT_CLASS = "";
 
 function StartOnId(params){
     FRAME_CONTAINER_ID = params.FrameContainer;
@@ -25,7 +27,7 @@ function StartOnId(params){
     PASSWORD = params.Password;
     CLASS = params.FrameCssClass;
     RESULT_CLASS = params.ResultCssClass;
-    COMPONENT = 'https://reactwebrgdocntface.azurewebsites.net/'
+    COMPONENT = `${BASE_URL}/auth?authmech=OnID+Password&do=login&username=${USER}&password=${PASSWORD}&cbval_vendorBase64=AAAk%2FwMGAAAAAQ%3D%3D&Submit1=Yes&&location=https%3a%2f%2fwebcomponentpsv.onid.us%2f`;
     STEPS_PAGE = `${BASE_URL}/onid-verification/Steps.html?backUrl=${window.location.href}&&name=${NAME}&&imageUrl=${LOGO_URL}`;
     loadIframe();
 
@@ -61,7 +63,7 @@ function loadIframe() {
     }
     
     
-    var framecontainer = document.getElementById(FRAME_CONTAINER_ID);
+    const framecontainer = document.getElementById(FRAME_CONTAINER_ID);
 
     if(framecontainer){
         framecontainer.appendChild(iframeElement);
@@ -69,15 +71,23 @@ function loadIframe() {
         console.log("You should have a element <div> with id = frame-onid-container");
         return;
     }
-    var resultContainer = document.getElementById(RESULT_CONTAINER_ID);
+    const resultContainer = document.getElementById(RESULT_CONTAINER_ID);
         if(RESULT_CLASS != "" && resultContainer){
             resultContainer.classList.add(RESULT_CLASS)
             }
 
     window.addEventListener('message', function (event) {
+
+
+
+ if (event.origin !== EXPECTED_ORIGIN) {
+    console.warn("Received message from untrusted origin:", event.origin);
+    return; 
+}
+
         // Check if the message is from the iframe
         if (event.source === iframeElement.contentWindow) {
-            var resultDiv = document.getElementById(RESULT_CONTAINER_ID);
+            const resultDiv = document.getElementById(RESULT_CONTAINER_ID);
 
             console.log("Received response data from iframe:", event.data);
             if (event.data.message == OK) {
@@ -100,11 +110,11 @@ function loadIframe() {
                 console.log("The method GetResultONID does not exist.");
               }
 
-            var procResponse = shortenStrings(event.data, 50);
+            const procResponse = shortenStrings(event.data, 50);
 
-            var response = JSON.stringify(procResponse, null, 2);
+            const response = JSON.stringify(procResponse, null, 2);
 
-            var preElement = document.createElement('pre');
+            const preElement = document.createElement('pre');
            
             preElement.style.whiteSpace = 'pre-wrap';
             preElement.style.backgroundColor = 'white';

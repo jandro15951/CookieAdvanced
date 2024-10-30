@@ -2,7 +2,7 @@ const COOKIE_NAME = "ONIDCOOKIE";
 const STEP = GetParam("step");
 const OK = "ok";
 const REDIRECT_STEP = "redirect_to_steps";
-
+const PARENT = "parentOrigin";
 
 
 Start();
@@ -17,7 +17,7 @@ function Start() {
 
 function SetValues(){
 
-    var values = GetText();
+    const values = GetText();
 
     SetText("PermissionTitle", values.PermissionTitle);
     SetText("PermissionBody", values.PermissionBody);
@@ -29,7 +29,7 @@ function SetValues(){
 
 
 function SetText(id, text){
-   var element = document.getElementById(id);
+   const element = document.getElementById(id);
     element.innerHTML = text;
 }
 
@@ -37,7 +37,7 @@ function SetText(id, text){
 function HasPermission() {
     document.hasStorageAccess().then(
         function (hasAccess) {
-            if (hasAccess) {
+            if (hasAccess == true) {
 
                 // Si se tiene acceso al storage se redirecciona al web component con normalidad
                 SendMessage(OK)
@@ -71,8 +71,8 @@ function GetParam(paramName) {
 }
 
 function ShowModal(show) {
-    var modal = document.getElementById("cookieModal");
-    var loader = document.getElementById("loader");
+    const modal = document.getElementById("cookieModal");
+    const loader = document.getElementById("loader");
 
     if(show == 1){
         modal.style.display = "block";
@@ -101,20 +101,22 @@ document.getElementById('acceptCookies').addEventListener('click', function () {
 
 
 function SendMessage(messagePost) {
-    window.parent.postMessage({ message: messagePost }, "*");
+    window.parent.postMessage({ message: messagePost }, GetParam(PARENT));
 }
 
 function IsAppleDevice() {
-    const userAgent = window.navigator.userAgent || window.navigator.vendor || window.opera;
+    const userAgent = window.navigator.userAgent || window.opera;
 
     if (/iPad|iPhone|SamsungBrowser|iPod/.test(userAgent) && !window.MSStream) {
         return true;
     }
 
 
-    if (navigator.platform.indexOf('Mac') > -1) {
-        return true;
+    if (navigator.userAgentData && navigator.userAgentData.platform) {
+        return navigator.userAgentData.platform.includes('Mac');
     }
+    
+
 
     return false;
 }

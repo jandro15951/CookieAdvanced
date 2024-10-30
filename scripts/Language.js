@@ -1,5 +1,5 @@
 
-var Messages = {
+const Messages = {
     "en": {
     "PermissionTitle": "Permission for cookie usage",
     "PermissionBody": "This site uses cookies to enhance your experience. Please accept the use of cookies to continue.",
@@ -34,7 +34,7 @@ function GetLanguage(){
 
 function GetText(){
 
-    var language = GetLanguage();
+  const language = GetLanguage();
 
     const message = Messages[language] ? Messages[language] : Messages["en"];
 
